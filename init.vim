@@ -25,6 +25,7 @@ set lazyredraw
 call plug#begin(stdpath('data'))
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'morhetz/gruvbox'
+Plug 'lervag/vimtex'
 "fuzzy-finder
 "Plug 'junegunn/fzf'
 Plug 'nvim-lua/plenary.nvim'
@@ -33,7 +34,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'szw/vim-maximizer'
 Plug 'preservim/nerdtree'
 "autocompletion
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'neovim/nvim-lspconfig'
 "Plug 'nvim-lua/completion-nvim'
 Plug 'bling/vim-airline'
@@ -44,7 +45,7 @@ let mapleader = " "
 "***************************************
 "*     Plugin Mappings                 *
 "***************************************
-let g:coc_node_path = '/snap/bin/node'
+"let g:coc_node_path = '/snap/bin/node'
 
 "map <leader>f :FZF<cr>
 map <leader>f <cmd>Telescope find_files<cr>
@@ -103,7 +104,14 @@ colorscheme default
 "colorscheme darkblue
 "colorscheme gruvbox
 "colorscheme zellner
+"colorscheme desert
+"colorscheme peachpuff
+"colorscheme slate
+"colorscheme pablo
+"colorscheme delek
+
+let g:coc_start_at_startup = v:false
 
 
-"lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
-"lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD <Plug>(coc-declaration)
